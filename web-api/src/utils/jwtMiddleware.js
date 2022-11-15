@@ -1,7 +1,6 @@
 const jwt = require('jsonwebtoken')
 const jwtMiddleware = (deps) => {
   return async (req, res, next) => {
-    console.log('req',req);
     if (!deps.exclusions.includes(req.url)) {
       const token = req.headers['x-access-token']
       if (!token) {

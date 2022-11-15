@@ -3,4 +3,6 @@ export interface User{
 	login:string,
 	id?: number,
 	token?: string
+	msg?: string
+	status?: boolean
 }

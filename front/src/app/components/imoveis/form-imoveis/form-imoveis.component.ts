@@ -105,6 +105,8 @@ export class FormImoveisComponent implements OnInit {
 
   readFile(event: any){
     const files = event.target.files
+    console.log(event);
+    console.log(files);
     
     for(let index = 0; index < files.length; index++){
 

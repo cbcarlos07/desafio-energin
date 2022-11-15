@@ -12,7 +12,7 @@ export class CompraVendaService {
 
   private URL: string = environment.host
   constructor(private _http: HttpClient) {
-    this.URL = `${this.URL}/buy-sell`
+    this.URL = `${this.URL}/api/buy-sell`
   }
 
   create(compraVenda: CompraVenda): Observable<Mensagem>{

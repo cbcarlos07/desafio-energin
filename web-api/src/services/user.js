@@ -29,9 +29,14 @@ exports.login = params =>{
         let {login, password} = params
         password = md5( password )
         const {data: auth} = await rep.login( login, password )
-        const _auth = auth[0]
-        delete _auth.password
-        const token = jwt.sign({login: _auth.login, id: _auth.id}, process.env.JWT_SECRET, { expiresIn: 60 * 60 * 24 })
-        resolve({..._auth, token})
+        console.log('auth', auth);
+        if( auth.length > 0 ){
+            const _auth = auth[0]
+            delete _auth.password
+            const token = jwt.sign({login: _auth.login, id: _auth.id}, process.env.JWT_SECRET, { expiresIn: 60 * 60 * 24 })
+            resolve({..._auth, token, status: true})
+        }else{
+            resolve({msg: 'Login ou senha inválidos', status: false})
+        }
     })
 }

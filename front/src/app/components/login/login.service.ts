@@ -19,9 +19,11 @@ export class LoginService {
   login(params: User): Observable<User>{
     return this._http.patch<User>(`${this.URL}/auth`, params)
                .pipe(tap((user: any) => {
-                  localStorage.setItem('user', user.name)
-                  localStorage.setItem('idUser', user.id)
-                  localStorage.setItem('token', user.token)
+                  if(user.status){
+                    localStorage.setItem('user', user.name)
+                    localStorage.setItem('idUser', user.id)
+                    localStorage.setItem('token', user.token)
+                  }
                }))
 
 }

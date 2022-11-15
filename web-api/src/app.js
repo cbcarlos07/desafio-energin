@@ -14,7 +14,7 @@ const corsOptions = {
     origin: '*',
     optionsSuccessStatus: 200
   }
-  app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 const exclusions =['/','/auth']
 app.use(jwtMiddleware( {exclusions} ))
 app.use('/', router.initRouter)

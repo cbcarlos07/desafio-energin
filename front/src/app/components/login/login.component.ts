@@ -11,6 +11,8 @@ import { User } from './user.model';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup
+  isError: boolean
+  msgError: string
   constructor(private _loginService: LoginService,
               private _router: Router) { }
 
@@ -25,7 +27,12 @@ export class LoginComponent implements OnInit {
     this._loginService
         .login(this.form.value)
         .subscribe((resp: User)=>{
-           this._router.navigate(['/dashboard'])
+           if( resp.status ){
+             this._router.navigate(['/dashboard'])
+           }else{
+              this.isError = true
+              this.msgError = resp.msg || ''
+           }
         })
       }      
 }

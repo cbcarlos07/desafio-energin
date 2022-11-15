@@ -37,6 +37,23 @@
       "id": 6
     }
   ],
-  "imoveis": [],
-  "action": []
+  "imoveis": [
+    {
+      "name": "Apa",
+      "value": 1000,
+      "picture": "Evidência job executando.png",
+      "pic_store": "QcXy5JJaM.png",
+      "id": 1
+    }
+  ],
+  "action": [
+    {
+      "usuario": 1,
+      "imovel": 1,
+      "value": 1000,
+      "cliente": "Bruno",
+      "acao": "C",
+      "id": 1
+    }
+  ]
 }
