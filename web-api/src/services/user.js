@@ -29,7 +29,6 @@ exports.login = params =>{
         let {login, password} = params
         password = md5( password )
         const {data: auth} = await rep.login( login, password )
-        console.log('auth', auth);
         if( auth.length > 0 ){
             const _auth = auth[0]
             delete _auth.password
