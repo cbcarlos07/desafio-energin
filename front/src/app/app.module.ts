@@ -1,4 +1,4 @@
-import { NgModule, LOCALE_ID } from '@angular/core';
+import { NgModule, LOCALE_ID, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +11,7 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {registerLocaleData} from "@angular/common";
 import locatePt from '@angular/common/locales/pt'
+import { ApplicationErrorHandler } from './security/app.error-handler';
 registerLocaleData(locatePt, 'pt')
 
 
@@ -31,7 +32,10 @@ registerLocaleData(locatePt, 'pt')
     SharedModule.forRoot(),
     
   ],
-  providers: [{provide: LOCALE_ID, useValue: 'pt'},],
+  providers: [
+              {provide: LOCALE_ID, useValue: 'pt'},
+              {provide: ErrorHandler, useClass: ApplicationErrorHandler}
+            ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
