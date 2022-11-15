@@ -91,5 +91,8 @@ Existe uma pasta chamada **Compilado** onde estão os arquivos gerados ao ser co
 
 [Voltar ao inicio](#begin)
 
+## <a id="dashboard"> 6. Dashboard
+
+![alt text](https://github.com/cbcarlos07/desafio-energin/blob/main/print/dashboard.png)
 
 
