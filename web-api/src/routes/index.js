@@ -1,0 +1,5 @@
+exports.userRouter = require('./usuarioRouter')
+exports.imoveisRouter = require('./imoveisRouter')
+exports.buySellRouter = require('./buySellRouter')
+exports.dashboardRouter = require('./dashboardRouter')
+exports.initRouter = require('./initRouter')

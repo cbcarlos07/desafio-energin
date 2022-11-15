@@ -1,0 +1,28 @@
+
+
+<app-bradcrumb title="Usuários" subtitle="Gerenciamento de usuários"></app-bradcrumb>
+
+<app-body title="" [incluir]="['/users/cad']">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <th>Nome</th>
+            <th>Login</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{ user.name }}</td>
+                <td>{{ user.login }}</td>
+                <td>
+                    <a [routerLink]="['/users/edit', user.id]">
+                        <i class="text-warning fa fa-edit" title="Editar"></i>                       
+                    </a>
+                    &nbsp; 
+                    
+                    <i class="remover text-danger fa fa-remove" (click)="perguntaRemover(user)" title="Remover"></i>
+                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</app-body>
+    

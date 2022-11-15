@@ -1,0 +1,68 @@
+<app-bradcrumb title="Imóveis" [subtitle]="subtitle"></app-bradcrumb>
+
+<app-body title="" >
+    <div class="col-md-6">
+        <form role="form" [formGroup]="form" (submit)="submit()">
+            <div class="box-body">
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nome</label>
+                    <input type="text" class="form-control"  placeholder="Digite o nome" formControlName="name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Valor</label>
+                    <input type="text" class="form-control" prefix="R$ " mask="separator.2" thousandSeparator="."  placeholder="Digite o valor" formControlName="value">
+                </div>
+                
+                <div>
+                    <div class="text-danger">
+                        {{msgError}}
+                    </div>
+                    <div class="form-group-file">
+                        <h4>Anexar arquivos</h4>
+                        <input 
+                        type="file"
+                        class="form-control-file"
+                        #fileList
+                        accept="image/jpeg,image/pjpeg,image/png"
+                        (change)="readFile($event)"
+                        />
+                        <label for="exampleInputEmail1">Clique ou arraste o arquivo</label><br>
+                        <small>Somente aceito JPG ou PNG</small>
+                    </div>
+                    <div>
+                        <ul class="list-group-flush">
+                            <li class="list-group-item d-flex align-items-center" *ngFor="let file of files; let i = index">
+                                {{file.arquivo}}
+                                <div class="pull-right">
+                                    <span class="ml-auto"> {{ sizeToMegaByte(file.size) }} </span>
+                                    &nbsp;
+                                    <a [href]="file.url" target="_blank" class="btn">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+                                    &nbsp;
+                                    <button class="btn" (click)="remove(i)">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>    
+                </div>
+
+                
+                
+                
+                
+            </div>
+            
+            <div class="box-footer">
+                <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+
+    </div>
+    
+</app-body>
+    

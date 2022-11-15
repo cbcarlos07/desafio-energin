@@ -1,0 +1,37 @@
+<app-bradcrumb title="Imóveis" subtitle="Compra e Venda"></app-bradcrumb>
+
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3>Imóveis | Compra ou Venda | <strong>{{ nome }}</strong></h3>
+                    <div class="box-tools">
+                        <a [routerLink]="['/imoveis/buy-sell', id]" class="btn btn-success">
+                            Comprar ou vender
+                        </a>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <th>Usuário</th>
+                            <th>Cliente</th>
+                            <th>Ação</th>
+                            <th>Valor</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let compra of compras">
+                                <td>{{compra.nameUser}}</td>
+                                <td>{{compra.cliente}}</td>
+                                <td>{{compra.acao == 'C' ? 'Compra' : 'Venda'}}</td>
+                                <td>{{compra.value | currency: 'BRL'}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

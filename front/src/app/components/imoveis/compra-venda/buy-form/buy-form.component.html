@@ -1,0 +1,34 @@
+<app-bradcrumb title="Imóveis" [subtitle]="subtitle"></app-bradcrumb>
+
+
+<app-body [title]="nome" >
+    <div class="col-md-6">
+        <form role="form" [formGroup]="form" (submit)="submit()">
+            <div class="box-body">
+
+                
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Valor</label>
+                    <input type="text" class="form-control" prefix="R$ " mask="separator.2" thousandSeparator="."  placeholder="Digite o valor" formControlName="value" >
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Ação</label>
+                    <select class="form-control"  formControlName="acao" placeholder="Escolha a ação">
+                        <option value="C">Compra</option>
+                        <option value="V">Venda</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Cliente</label>
+                    <input type="text" class="form-control"  placeholder="Informe o cliente" formControlName="cliente">
+                </div>
+            </div>
+            
+            <div class="box-footer">
+                <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+
+    </div>
+    
+</app-body>

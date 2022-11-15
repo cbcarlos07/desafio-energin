@@ -1,0 +1,19 @@
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3>{{title}}</h3>
+                    <div class="box-tools">
+                        <a [routerLink]="incluir" class="btn btn-success" *ngIf="incluir.length > 0">
+                            <i class="fa fa-plus"></i> Incluir
+                        </a>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <ng-content></ng-content>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

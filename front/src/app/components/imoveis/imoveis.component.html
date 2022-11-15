@@ -1,0 +1,29 @@
+<app-bradcrumb title="Imóveis" subtitle="Gerenciamento de imóveis"></app-bradcrumb>
+
+<app-body title="" [incluir]="['/imoveis/cad']">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <th>Nome</th>
+            <th>Valor</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let imovel of imoveis">
+                <td>{{ imovel.name }}</td>
+                <td>{{ imovel.value | currency: 'BRL' }}</td>
+                <td>
+                    <a [routerLink]="['/imoveis/edit', imovel.id]">
+                        <i class="text-warning fa fa-edit" title="Editar"></i>                       
+                    </a>
+                    &nbsp; 
+                    
+                    <i class="remover text-danger fa fa-remove" (click)="perguntaRemover(imovel)" title="Remover"></i>
+                    &nbsp; 
+                    <a [routerLink]="['/imoveis/buy', imovel.id]">
+                        <i class="text-warning fa fa-bars" title="Compra e venda"></i>                       
+                    </a>
+                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</app-body>

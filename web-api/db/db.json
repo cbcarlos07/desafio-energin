@@ -1,0 +1,42 @@
+{
+  "users": [
+    {
+      "name": "Carlos",
+      "login": "carlosbruno",
+      "password": "e10adc3949ba59abbe56e057f20f883e",
+      "id": 1
+    },
+    {
+      "name": "Bruno",
+      "login": "bruno",
+      "password": "e10adc3949ba59abbe56e057f20f883e",
+      "id": 2
+    },
+    {
+      "name": "Brito",
+      "login": "brito",
+      "password": "e10adc3949ba59abbe56e057f20f883e",
+      "id": 3
+    },
+    {
+      "name": "Teste",
+      "login": "teste",
+      "password": "e10adc3949ba59abbe56e057f20f883e",
+      "id": 4
+    },
+    {
+      "name": "Teste1",
+      "login": "teste",
+      "password": "e10adc3949ba59abbe56e057f20f883e",
+      "id": 5
+    },
+    {
+      "name": "Novo ",
+      "login": "novo",
+      "password": "e10adc3949ba59abbe56e057f20f883e",
+      "id": 6
+    }
+  ],
+  "imoveis": [],
+  "action": []
+}
