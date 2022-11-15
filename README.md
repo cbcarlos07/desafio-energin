@@ -5,6 +5,7 @@
 ## [3. Banco de dados](#db)
 ## [4. Script para inicialização do banco](#antes)
 ## [5. Executando o projeto](#run)
+## [6. Print](#print)
 
 
 ## <a id="intro">1. Introdução
@@ -91,7 +92,7 @@ Existe uma pasta chamada **Compilado** onde estão os arquivos gerados ao ser co
 
 [Voltar ao inicio](#begin)
 
-## <a id="dashboard"> 6. Dashboard
+## <a id="print"> 6. Print
 
 ![alt text](https://github.com/cbcarlos07/desafio-energin/blob/main/print/dashboard.png)
 
