@@ -28,7 +28,7 @@ export class BuyFormComponent implements OnInit {
   ngOnInit(): void {
     this.id = this._activateRouter.snapshot.params['id']
     this.form = new FormGroup({
-      usuario: new FormControl(1, {validators: [Validators.required]}),
+      usuario: new FormControl(undefined, {validators: [Validators.required]}),
       imovel: new FormControl(Number(this.id), {validators: [Validators.required]}),
       value: new FormControl(undefined, {validators: [Validators.required]}),
       cliente: new FormControl(undefined, {validators: [Validators.required]}),
@@ -36,6 +36,7 @@ export class BuyFormComponent implements OnInit {
     })
 
     this.buscarImovel()
+    this.getIdUser()
   }
 
   submit(){
@@ -44,6 +45,11 @@ export class BuyFormComponent implements OnInit {
           this._notificationService.notify(resp.msg)
           this._location.back()
         })
+  }
+
+  getIdUser(){
+    const idUser = localStorage.getItem('idUser')
+    this.form.controls['usuario'].setValue( idUser )
   }
 
   buscarImovel(){
