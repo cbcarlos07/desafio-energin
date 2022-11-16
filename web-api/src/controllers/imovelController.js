@@ -23,7 +23,6 @@ exports.read = (req, res) => {
         return service.read(id)
                       .then(response => {
                         const resp = response.data
-                        console.log('read id', resp);
                         const img = path.resolve('public', resp.pic_store)
                         var imageAsBase64 = fs.readFileSync(img, 'base64');  
                         
